@@ -3,9 +3,9 @@
 use failure::bail;
 use failure::format_err;
 use failure::Error;
+use itertools::Itertools;
 use rayon::prelude::*;
 use strum_macros::EnumString;
-use itertools::Itertools;
 
 use std::char;
 use std::cmp::{max, min};
@@ -24,7 +24,7 @@ struct Policy {
 }
 
 impl Policy {
-    fn is_valid(&self, password: &str) -> bool{
+    fn is_valid(&self, password: &str) -> bool {
         let count = password.chars().filter(|&c| c == self.letter).count() as i32;
         self.min <= count && count <= self.max
     }
@@ -38,7 +38,10 @@ impl FromStr for Policy {
         let policy = Policy {
             min: parts[0].parse()?,
             max: parts[1].parse()?,
-            letter: parts[2].chars().next().ok_or_else(|| format_err!("No letter specified"))?
+            letter: parts[2]
+                .chars()
+                .next()
+                .ok_or_else(|| format_err!("No letter specified"))?,
         };
         Ok(policy)
     }
@@ -59,9 +62,11 @@ fn read_input() -> Result<Input, Error> {
     Ok(result)
 }
 
-
 fn solve(input: &mut Input) -> Result<Output, Error> {
-    let valid = input.iter().filter(|(policy, password)| policy.is_valid(password)).count();
+    let valid = input
+        .iter()
+        .filter(|(policy, password)| policy.is_valid(password))
+        .count();
     Ok(valid)
 }
 

@@ -1,9 +1,9 @@
 #![allow(
-dead_code,
-unused_imports,
-clippy::needless_range_loop,
-clippy::ptr_arg,
-clippy::char_lit_as_u8
+    dead_code,
+    unused_imports,
+    clippy::needless_range_loop,
+    clippy::ptr_arg,
+    clippy::char_lit_as_u8
 )]
 
 use crate::position::*;

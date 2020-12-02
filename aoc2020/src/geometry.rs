@@ -1,4 +1,3 @@
-use nalgebra;
 use num::clamp;
 use std::cmp::Ordering;
 use std::iter::FromIterator;
@@ -384,7 +383,7 @@ impl LineSegment {
 
 #[cfg(test)]
 mod test {
-    use crate::geometry::{Bounds, Intersections, LineSegment, Point2, Vector2};
+    use crate::geometry::{Bounds, Intersections, LineSegment, Point2};
 
     #[test]
     fn test_bounds_overlap() {

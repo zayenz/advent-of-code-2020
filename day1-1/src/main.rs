@@ -29,7 +29,6 @@ fn read_input() -> Result<Input, Error> {
     Ok(result)
 }
 
-
 fn solve(input: &mut Input) -> Result<Output, Error> {
     for a in input.iter() {
         for b in input.iter() {

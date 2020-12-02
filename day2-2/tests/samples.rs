@@ -3,10 +3,12 @@ use assert_cli;
 #[test]
 fn sample1() {
     assert_cli::Assert::main_binary()
-        .stdin("1-3 a: abcde
+        .stdin(
+            "1-3 a: abcde
 1-3 b: cdefg
 2-9 c: ccccccccc
-")
+",
+        )
         .stdout()
         .is("1")
         .unwrap();

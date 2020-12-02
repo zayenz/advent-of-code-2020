@@ -12,7 +12,7 @@ use std::str::FromStr;
 /// ```
 /// # use failure::Error;
 /// # fn main() -> Result<(), Error> {
-/// use aoc2019::input::get_numbers;
+/// use aoc2020::input::get_numbers;
 /// assert_eq!(get_numbers::<i32>("<1, 3*-4>")?, vec![1, 3, -4]);
 /// # Ok(())
 /// # }
@@ -48,7 +48,7 @@ where
 /// ```
 /// # use failure::Error;
 /// # fn main() -> Result<(), Error> {
-/// use aoc2019::input::get_numbers;
+/// use aoc2020::input::get_numbers;
 /// assert_eq!(get_numbers::<i32>("<1, 3*-4>")?, vec![1, 3, -4]);
 /// # Ok(())
 /// # }
